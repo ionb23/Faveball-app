@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from './components/Homepage/Homepage'
+import Welcome from './components/Welcome/Welcome';
+import {HashRouter as Router ,Route, Routes, Navigate} from 'react-router-dom'
+import SavedTeamPage from './components/SavedTeamsPage/SavedTeamsPage';
+import SummaryPage from './components/SummaryPage/SummaryPage';
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const pickedTeam = localStorage.getItem('Fav team')
+
+
+  return (<>
+  <Router>
+     {pickedTeam ?<Navigate to="/home" />:  <Navigate to="/" /> }
+
+<Routes>
+<Route path="/" element={<Welcome />} />
+<Route path="/home" element={<HomePage />} />
+<Route path="live" element={<SummaryPage />} />
+<Route path="saved/*" element={<SavedTeamPage />} />
+</Routes>
+</Router>
+  </>
+
   );
 }
 
