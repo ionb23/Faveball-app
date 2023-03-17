@@ -1096,7 +1096,7 @@
         "type": "league",
         "full-name": "Northern Premier League - East Division"
       },
-      {
+   {
         "teams": [
           {
             "name": "1874 Northwich",
@@ -2664,13 +2664,7 @@
         "type": "league",
         "full-name": "Portuguese Primeira Liga"
       },
-      {
-        "teams": [],
-        "generic-name": "Russian Premier League",
-        "id": 98,
-        "type": "league",
-        "full-name": "Russian Premier League"
-      },
+
       {
         "teams": [
           {
@@ -2754,13 +2748,6 @@
         "id": 99,
         "type": "league",
         "full-name": "Turkish Süper Lig"
-      },
-      {
-        "teams": [],
-        "generic-name": "Irish Premier Division",
-        "id": 100,
-        "type": "league",
-        "full-name": "Irish Premier Division"
       },
       {
         "teams": [
@@ -3109,237 +3096,6 @@
         "id": 107,
         "type": "cup",
         "full-name": "FA Women's League Cup"
-      },
-      {
-        "teams": [],
-        "generic-name": "Combined Counties League Premier Division North",
-        "id": 117,
-        "type": "league",
-        "full-name": "Combined Counties League Premier Division North"
-      },
-      {
-        "teams": [],
-        "generic-name": "Combined Counties League Premier Division South",
-        "id": 118,
-        "type": "league",
-        "full-name": "Combined Counties League Premier Division South"
-      },
-      {
-        "teams": [],
-        "generic-name": "Combined Counties League Division One",
-        "id": 119,
-        "type": "league",
-        "full-name": "Combined Counties League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Eastern Counties League Premier Division",
-        "id": 120,
-        "type": "league",
-        "full-name": "Eastern Counties League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Eastern Counties League Division One North",
-        "id": 121,
-        "type": "league",
-        "full-name": "Eastern Counties League Division One North"
-      },
-      {
-        "teams": [],
-        "generic-name": "Eastern Counties League Division One South",
-        "id": 122,
-        "type": "league",
-        "full-name": "Eastern Counties League Division One South"
-      },
-      {
-        "teams": [],
-        "generic-name": "Essex Senior League",
-        "id": 123,
-        "type": "league",
-        "full-name": "Essex Senior League"
-      },
-      {
-        "teams": [],
-        "generic-name": "Hellenic League Premier Division",
-        "id": 124,
-        "type": "league",
-        "full-name": "Hellenic League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Hellenic League Division One",
-        "id": 125,
-        "type": "league",
-        "full-name": "Hellenic League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Midland League Premier Division",
-        "id": 126,
-        "type": "league",
-        "full-name": "Midland League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Midland League Division One",
-        "id": 127,
-        "type": "league",
-        "full-name": "Midland League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "North West Counties League Premier Division",
-        "id": 128,
-        "type": "league",
-        "full-name": "North West Counties League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "North West Counties League Division One North",
-        "id": 129,
-        "type": "league",
-        "full-name": "North West Counties League Division One North"
-      },
-      {
-        "teams": [],
-        "generic-name": "North West Counties League Division One South",
-        "id": 130,
-        "type": "league",
-        "full-name": "North West Counties League Division One South"
-      },
-      {
-        "teams": [],
-        "generic-name": "Northern Counties East League Premier Division",
-        "id": 131,
-        "type": "league",
-        "full-name": "Northern Counties East League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Northern Counties East League Division One",
-        "id": 132,
-        "type": "league",
-        "full-name": "Northern Counties East League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Northern League Division One",
-        "id": 133,
-        "type": "league",
-        "full-name": "Northern League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Northern League Division Two",
-        "id": 134,
-        "type": "league",
-        "full-name": "Northern League Division Two"
-      },
-      {
-        "teams": [],
-        "generic-name": "South West Peninsula League Premier Division East",
-        "id": 135,
-        "type": "league",
-        "full-name": "South West Peninsula League Premier Division East"
-      },
-      {
-        "teams": [],
-        "generic-name": "South West Peninsula League Premier Division West",
-        "id": 136,
-        "type": "league",
-        "full-name": "South West Peninsula League Premier Division West"
-      },
-      {
-        "teams": [],
-        "generic-name": "Southern Combination League Premier Division",
-        "id": 137,
-        "type": "league",
-        "full-name": "Southern Combination League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Southern Combination League Division One",
-        "id": 138,
-        "type": "league",
-        "full-name": "Southern Combination League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Southern Counties East League Premier Division",
-        "id": 139,
-        "type": "league",
-        "full-name": "Southern Counties East League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Southern Counties East League Division One",
-        "id": 140,
-        "type": "league",
-        "full-name": "Southern Counties East League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Spartan South Midlands League Premier Division",
-        "id": 141,
-        "type": "league",
-        "full-name": "Spartan South Midlands League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Spartan South Midlands League Division One",
-        "id": 142,
-        "type": "league",
-        "full-name": "Spartan South Midlands League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "United Counties League Premier Division North",
-        "id": 143,
-        "type": "league",
-        "full-name": "United Counties League Premier Division North"
-      },
-      {
-        "teams": [],
-        "generic-name": "United Counties League Premier Division South",
-        "id": 144,
-        "type": "league",
-        "full-name": "United Counties League Premier Division South"
-      },
-      {
-        "teams": [],
-        "generic-name": "United Counties League Division One",
-        "id": 145,
-        "type": "league",
-        "full-name": "United Counties League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Wessex League Premier Division",
-        "id": 146,
-        "type": "league",
-        "full-name": "Wessex League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Wessex League Division One",
-        "id": 147,
-        "type": "league",
-        "full-name": "Wessex League Division One"
-      },
-      {
-        "teams": [],
-        "generic-name": "Western League Premier Division",
-        "id": 148,
-        "type": "league",
-        "full-name": "Western League Premier Division"
-      },
-      {
-        "teams": [],
-        "generic-name": "Western League Division One",
-        "id": 149,
-        "type": "league",
-        "full-name": "Western League Division One"
       }
     ]
   }
