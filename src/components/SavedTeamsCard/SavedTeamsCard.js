@@ -1,4 +1,4 @@
-import AutoComplete from "../AutoComplete/AutoComplete.js";
+import TeamAutoComplete from "../AutoComplete/AutoComplete.js";
 
 
 function SavedTeamsCard(props) {
@@ -32,7 +32,7 @@ function SavedTeamsCard(props) {
             {/* remove bottom border rounding from team card and remove top border rounding from the comparison div below*/}
             <div className="card card-footer me-5 ms-5">
                 <small className="text-muted">Choose a team to compare your favourite team against:</small>
-                <AutoComplete />
+                <TeamAutoComplete />
             </div>
 
 

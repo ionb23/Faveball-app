@@ -16,7 +16,7 @@ for (let i = 0; i < teamsJSON.competitions.length; i++) {
 
 console.log(teamArray);
 
-function AutoComplete() {
+function TeamAutoComplete() {
 
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
@@ -65,4 +65,4 @@ function AutoComplete() {
   )
 }
 
-export default AutoComplete;
+export default TeamAutoComplete;
