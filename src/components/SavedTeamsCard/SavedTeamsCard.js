@@ -1,4 +1,4 @@
-import TeamAutoComplete from "../AutoComplete/AutoComplete.js";
+import TeamAutoComplete from "../AutoComplete/TeamAutoComplete.js";
 
 
 function SavedTeamsCard(props) {
