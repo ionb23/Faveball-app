@@ -1,0 +1,35 @@
+.navbar-trans {
+    background-color: transparent !important;
+
+
+}
+
+.navbar-opaque {
+    background-color: #1F3223 !important;
+
+
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 5%;
+    font-size: 200%;
+
+}
+
+.brand-opaque {
+    color: #F4FFF8 !important;
+}
+
+.brand-trans {
+    color: #1F3223 !important;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: inherit !important
+}
