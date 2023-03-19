@@ -1,17 +1,10 @@
-import { useState } from "react"
-import getAllNames from "./creatingArray"
+import {Link} from 'react-router-dom'
+import TeamAutoComplete from "../AutoComplete/TeamAutoComplete";
 
-const myList = require('../../assets/teams-list.json')
-const myArrayTeams = getAllNames(myList)
-console.log(myArrayTeams)
+
 
 function Welcome() {
-
-    const [favTeam, setFavTeam] = useState(" ")
-    const handleChange = (event) => {
-        setFavTeam(event.target.value)
-    }
-
+const saveMyFavTeam =(item)=>localStorage.setItem('Fav team', item.name);
 
 
     return <section style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504016798967-59a258e9386d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')", backgroundSize: "cover", backgrounRepeat: "norepeat", position: "fixed", width: "100%", height: "100%" }}>
@@ -20,11 +13,11 @@ function Welcome() {
                 <h1>hi</h1>
                 <hr />
                 <h2>Let's get started by picking your favorite football team!</h2>
-                <input type="text" id="favoriteTeam" name="favoriteTeam" onChange={handleChange} value={favTeam} />
-                <button onClick={() => localStorage.setItem('Fav team', favTeam)}>Lets start</button>
-
+                <TeamAutoComplete whichPage = {saveMyFavTeam } />
+              <Link className="select-button" type="button" to="/home">click</Link>
             </div>
         </article>
     </section>
 }
 export default Welcome
+//  <button onClick={/*() => localStorage.setItem('Fav team', favTeam)*/}>Lets start</button>
