@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import HomeNewsCard from '../HomeNewsCard/HomeNewsCard'
 
-function GenerateNews({temaName}) {
+function GenerateNews({teamName}) {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {

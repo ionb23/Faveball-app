@@ -93,7 +93,8 @@ function HomePage() {
                     </div>
                 </div>
 
-                <GenerateNews />
+                <GenerateNews
+                teamNAme='Manchester United' />
 
                 <Footer />
             </div>
