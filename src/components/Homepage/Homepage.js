@@ -34,11 +34,11 @@ function HomePage() {
 
     
     //assigning my teams number
-    const myTeam = localStorage.getItem('Fav team');
-    const teamNameNews = localStorage.getItem('NewsInfo');
+    const myTeamId = localStorage.getItem('FavTeam ID');
+    const teamName = localStorage.getItem('FavTeam Name');
     //function to fetch team
     function fetchTeam() {
-        const url = `https://football-web-pages1.p.rapidapi.com/team.json?team=${myTeam}`;
+        const url = `https://football-web-pages1.p.rapidapi.com/team.json?team=${myTeamId}`;
 
         const options = {
             method: 'GET',
@@ -61,7 +61,7 @@ function HomePage() {
     }
     //function to fetch league atm
     function fetchLeague() {
-        const url = `https://football-web-pages1.p.rapidapi.com/league-progress.json?team=${myTeam}`;
+        const url = `https://football-web-pages1.p.rapidapi.com/league-progress.json?team=${myTeamId}`;
 
         const options = {
             method: 'GET',
@@ -82,7 +82,7 @@ function HomePage() {
     }
     //function to fetch stats
     function fetchStats() {
-        const url = `https://football-web-pages1.p.rapidapi.com/league-table.json?comp=1&team=${myTeam}`;
+        const url = `https://football-web-pages1.p.rapidapi.com/league-table.json?comp=1&team=${myTeamId}`;
 
         const options = {
             method: 'GET',
@@ -108,7 +108,7 @@ function HomePage() {
             <div id="homepage-wrapper">
                 <Header />
 
-                <h2 className="text-center display-4 mb-5">{teamNameNews}</h2>
+                <h2 className="text-center display-4 mb-5">{teamName}</h2>
 
                 <div className="d-flex flex-wrap container-fluid justify-content-evenly">
                     <div className="col-sm-6 col-md-4 col-lg-3">
