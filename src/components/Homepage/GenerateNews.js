@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import HomeNewsCard from '../HomeNewsCard/HomeNewsCard'
 
 function GenerateNews({teamName}) {
-  const [newsData, setNewsData] = useState([]);
+  
+  let [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -12,7 +13,7 @@ function GenerateNews({teamName}) {
           "https://bing-news-search1.p.rapidapi.com/news/search",
           {
             params: {
-              q: `${teamName} football`,
+              q: `${teamName}+football`,
               setLang: "en",
               freshness: "Month",
               textFormat: "Raw",
@@ -34,16 +35,17 @@ function GenerateNews({teamName}) {
       }
     };
     fetchNews();
-  }, []);
+  }, [setNewsData,teamName]);
 
   return (
     <div className="d-flex  mt-5 container-fluid justify-content-center align-items-center flex-wrap">
       {newsData.map((news) => (
         <HomeNewsCard
           key={news.url}
-          url={news.image?.thumbnail?.contentUrl}
+          url={news.image ? news.image.thumbnail?.contentUrl : 'https://th.bing.com/th/id/OIP.6tdqnVP1s3X_6K3FBYtB7QHaHa?pid=ImgDet&rs=1'}
           title={news.name}
           snippet={news.description}
+          articleLink={news.url}
         />
       ))}
     </div>
