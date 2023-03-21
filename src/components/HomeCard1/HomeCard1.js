@@ -1,5 +1,3 @@
-
-
 function HomePageCard({ title,infoName,info,infoName2,info2,link}) {
     return (
         <div className="card homepagecard p-3">

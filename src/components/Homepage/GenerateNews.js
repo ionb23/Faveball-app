@@ -5,7 +5,7 @@ import HomeNewsCard from '../HomeNewsCard/HomeNewsCard'
 function GenerateNews({teamName}) {
   
   let [newsData, setNewsData] = useState([]);
-
+const APIkey = "f72b817560msh85096028e95a534p1b3f97jsn0259ea03ef55"
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -21,8 +21,7 @@ function GenerateNews({teamName}) {
             },
             headers: {
               "X-BingApis-SDK": "true",
-              "X-RapidAPI-Key":
-                "f72b817560msh85096028e95a534p1b3f97jsn0259ea03ef55",
+              "X-RapidAPI-Key": APIkey ,
               "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com"
             }
           }
