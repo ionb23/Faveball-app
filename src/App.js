@@ -7,14 +7,6 @@ import SummaryPage from './components/SummaryPage/SummaryPage';
 function App() {
 
   return (
-<<<<<<< HEAD
-    <>
-      <Header />
-      <SummaryPage/>
-      <Footer/>
-    </>
-
-=======
     <Router>
 
       <Routes>
@@ -26,7 +18,6 @@ function App() {
       </Routes>
       {localStorage.getItem('Fav team') ? <Navigate to="/" replace /> : <Navigate to="/welcome" replace />}
     </Router>
->>>>>>> 7528a3004f3dce40eeecc1609839ce5a79091a8f
   );
 }
 

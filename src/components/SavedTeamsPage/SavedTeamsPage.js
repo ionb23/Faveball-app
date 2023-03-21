@@ -304,7 +304,7 @@ function SavedTeamsPage() {
 )
 
 
-
+}
 export default SavedTeamsPage;
 
 
