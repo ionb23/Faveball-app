@@ -3,10 +3,14 @@ import SideNavLink from "../SideNavLink/SideNavLink";
 import { useState, useEffect } from "react"
 import SummaryCard from "../SummaryCard/SummaryCard";
 import SummaryCell from "../SummaryCell/SummaryCell";
-
+import FixturesCell from "../FixturesCell/FixturesCell"
+import './SummaryPage.css'
+import background from '../../images/travis-jones-bJp_wwRmF1I-unsplash.jpg'
 
 
 function SummaryPage() {
+
+    const image = require('https://images.unsplash.com/photo-1522947961977-67fe74257c16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
 
     useEffect(() => {
         fetchLeagues()
@@ -19,6 +23,7 @@ function SummaryPage() {
     const [leagues, setLeagues] = useState([]);
     const [currentLeague, setCurrentLeague] = useState([leagues[0]])
     const [currentTeams, setCurrentTeams] = useState([])
+    const [tableState, setTableState] = useState(false)
 
 
 
@@ -65,11 +70,43 @@ function SummaryPage() {
             .catch(err => console.error(err));
     }
 
-
+    // const generateCells = () => {
+    //     if (tableState === false) {
+    //         {
+    //             currentTeams.map((team) => {
+    //                 return (
+    //                     <SummaryCell
+    //                         club={team.name}
+    //                         clubid={team.id}
+    //                         leagueid={currentLeague.id}
+    //                         position={team.position}
+    //                         played={team['all-matches'].played}
+    //                         won={team['all-matches'].won}
+    //                         drawn={team['all-matches'].drawn}
+    //                         lost={team['all-matches'].lost}
+    //                         goalDifference={team['all-matches']['goal-difference']}
+    //                         points={team['total-points']}
+    //                     />
+    //                 )
+    //             })
+    //         }
+    //     } else {
+    //         return (
+    //             <FixturesCell
+                
+    //             />
+    //         )
+    //     }
+    // }
 
 
     return (
-        <div className="background w-100 h-100">
+        <div className="background w-100 h-100"
+            style={{ backgroundImage: `url${background}` }}>
+            <div className="text-center py-4" id="summary-header">
+                <h1 id="summary-title">Summary</h1>
+                <p id="summary-subtitle">Get up-to-date with league tables and view upcoming fixtures</p>
+            </div>
             <SideNav>
                 {leagues.map((league, index) => {
 
@@ -90,10 +127,11 @@ function SummaryPage() {
                     )
                 })}
             </SideNav>
-            
-            <SummaryCard
-                league={currentLeague['full-name']}>
 
+            <SummaryCard
+                league={currentLeague['full-name']}
+                >
+  
                 {currentTeams.map((team) => {
                     return (
                         <SummaryCell
@@ -109,7 +147,9 @@ function SummaryPage() {
                             points={team['total-points']}
                         />
                     )
-                })}
+                })
+            }
+
             </SummaryCard>
         </div>
     )

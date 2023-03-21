@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFutbol } from '@fortawesome/free-solid-svg-icons'
-import './SummaryCell.css'
+import './FixturesCell.css'
 import { icon } from '@fortawesome/fontawesome-svg-core'
 
 
 
-
+// Function to generate table row for fixtures part of summary page 
 function FixturesCell(props) {
 
     const { date, homeclub, awayclub, leagueid, homeclubid, awayclubid} = props
@@ -78,4 +78,4 @@ function FixturesCell(props) {
     )
 }
 
-export default SummaryCell
+export default FixturesCell

@@ -10,6 +10,14 @@ import Footer from './components/Footer/Footer'
 
 function App() {
 
+  return (
+    // <>
+    //   <Header />
+    //   <SummaryPage/>
+    //   <Footer/>
+    // </>
+
+  );
 }
 
 export default App;

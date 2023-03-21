@@ -11,7 +11,9 @@ function SummaryCell(props) {
 
     const { club, leagueid, clubid, position, played, won, drawn, lost, goalDifference, points, } = props
 
+    const pulledTeams = [localStorage.getItem('saved-teams')]
 
+    
 
     // setStatus for changing fav icon color 
     const [status, setStatus] = useState(false);
@@ -19,7 +21,7 @@ function SummaryCell(props) {
     // SetClubFav for handling adding a club to favourite 
     const [clubFav, setClubFav] = useState({});
 
-    const [savedTeams, setSavedTeams] = useState()
+    const [savedTeams, setSavedTeams] = useState(pulledTeams)
     // Function that removes or adds team to local storage and 
     function iconClick(event) {
 
@@ -29,7 +31,7 @@ function SummaryCell(props) {
         const clubid = currentRow.dataset.clubid;
         const leagueid = currentRow.dataset.leagueid;
         if (status === false) {
-            const localSavedTeams = [localStorage.getItem('saved-teams')]
+            
 
             setStatus(true);
             setClubFav({
@@ -37,11 +39,12 @@ function SummaryCell(props) {
                 clubid: clubid,
                 leagueid: leagueid
             });
+            pulledTeams.push(clubFav)
 
             
             console.log(savedTeams)
-
-            localStorage.setItem('saved-teams', JSON.stringify(clubFav));
+            setSavedTeams(pulledTeams)
+            localStorage.setItem('saved-teams', JSON.stringify(pulledTeams));
 
         } else {
 
@@ -52,8 +55,10 @@ function SummaryCell(props) {
                 clubid: clubid,
                 leagueid: leagueid
             });
+            pulledTeams.pop(clubFav)
+            setSavedTeams(pulledTeams)
 
-            localStorage.removeItem('saved-teams', clubFav)
+            localStorage.setItem('saved-teams', pulledTeams)
 
 
         }

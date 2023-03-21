@@ -10,3 +10,14 @@
     text-align: center;
     padding: 20px;
 }
+
+.nav-pills .nav-link.active {
+    background-color: #c1c4c1 !important;
+}
+
+/* Styling for league name on summary table */
+#league-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 3rem;
+    font-size: 2.4rem;
+}

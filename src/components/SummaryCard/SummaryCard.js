@@ -16,16 +16,16 @@ function SummaryCard(props) {
 
     return (
         <div className="container">
-            <div className="card summary-card">
+            <div className="card summary-card" data-state>
                 <ul onClick={handleTabClick} className="nav nav-pills nav-fill">
                     <li className="nav-item">
-                        <a className={tabState ? 'nav-link' : 'nav-link active'} aria-current="page" href="#">Table</a>
+                        <a className={tabState ? 'nav-link active' : 'nav-link'} aria-current="page">Table</a>
                     </li>
                     <li className="nav-item">
-                        <a className={tabState ? 'nav-link active' : 'nav-link'} href="#">Fixtures</a>
+                        <a className={tabState ? 'nav-link' : 'nav-link active'}>Fixtures</a>
                     </li>
                 </ul>
-                <h3>{league}</h3>
+                <h3 id='league-title'>{league}</h3>
                 <div className='card-body'>
                     <table className={tabState ? 'd-none' : 'table table-hover'}>
                         <thead>
