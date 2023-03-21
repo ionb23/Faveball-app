@@ -36,22 +36,23 @@ findTeamCompByName('Manchester United');
 
 function SavedTeamsPage() {
 
-  const savedTeams = ['Manchester United','Barcelona'];
+  const savedTeams = ['Barcelona','Liverpool'];
 
 
   const [teamData, setTeamData] = useState([]);
 
-
   useEffect(() => {
-      // fetchLeagues()
       async function fetchData() {
+
+        const newTeamData = [];
+
           savedTeams.forEach(async (team) => {
               const options = {
                   method: 'GET',
                   url: 'https://football-web-pages1.p.rapidapi.com/team.json',
                   params: { team: findTeamIDByName(team) },
                   headers: {
-                      'X-RapidAPI-Key': 'f09425a46emsh01c4f5ed39e351cp1e53f3jsn2869b4c15bef',
+                      'X-RapidAPI-Key': '536ff355c8mshd9ba3e88969d743p1bde80jsn7f1737cb1dca',
                       'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
                   }
               };
@@ -61,7 +62,7 @@ function SavedTeamsPage() {
                   url: 'https://football-web-pages1.p.rapidapi.com/league-progress.json',
                   params: { team: findTeamIDByName(team) },
                   headers: {
-                      'X-RapidAPI-Key': 'f09425a46emsh01c4f5ed39e351cp1e53f3jsn2869b4c15bef',
+                      'X-RapidAPI-Key': '536ff355c8mshd9ba3e88969d743p1bde80jsn7f1737cb1dca',
                       'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
                   }
               };
@@ -71,7 +72,7 @@ function SavedTeamsPage() {
                 url: 'https://football-web-pages1.p.rapidapi.com/records.json',
                 params: { team: findTeamIDByName(team) },
                 headers: {
-                  'X-RapidAPI-Key': 'f09425a46emsh01c4f5ed39e351cp1e53f3jsn2869b4c15bef',
+                  'X-RapidAPI-Key': '536ff355c8mshd9ba3e88969d743p1bde80jsn7f1737cb1dca',
                   'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
                 }
               };
@@ -81,7 +82,7 @@ function SavedTeamsPage() {
                 url: 'https://football-web-pages1.p.rapidapi.com/goalscorers.json',
                 params: { team: findTeamIDByName(team) },
                 headers: {
-                  'X-RapidAPI-Key': 'f09425a46emsh01c4f5ed39e351cp1e53f3jsn2869b4c15bef',
+                  'X-RapidAPI-Key': '536ff355c8mshd9ba3e88969d743p1bde80jsn7f1737cb1dca',
                   'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
                 }
               };
@@ -108,7 +109,8 @@ function SavedTeamsPage() {
                   // let goalscorerImg = await axios.request(options5);
 
 
-                  setTeamData([...teamData,
+                  // setTeamData([...teamData,
+                  newTeamData.push(
                     {
                         teamName: team,
                         teamID: findTeamIDByName(team),
@@ -180,7 +182,11 @@ function SavedTeamsPage() {
                               awayTeamScore: recordsData.data.records.records[14].matches[0]["away-team"].score,
                             }
                         }
-                    }])
+                    });
+
+                    if (newTeamData.length === savedTeams.length) {
+                      setTeamData(newTeamData);
+                    }
 
               } catch (error) {
                   console.log(error);
