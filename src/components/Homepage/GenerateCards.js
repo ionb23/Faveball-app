@@ -2,30 +2,27 @@ import HomePageCard from '../HomeCard1/HomeCard1';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
+
+
 function GenerateCards() {
-    const myAPIkey = '1543a61f73msh4be7f0c4722fae6p15f9c6jsnb197362fcbab'
+    const myAPIkey = 'ca358f8464mshb0db6b2cde321b7p1f76f7jsn19204a6d1082'
     //assigning my teams number
     const myTeam = localStorage.getItem('Fav team');
     //setting states
-   /* const [state, setState] = useState({
-        stadium: 'stadium',
-        capacity: 'capacity',
-        leagueName: 'League name',
-        currentPosition: 'current position',
-        points: 'current points',
-        played: 'matches played',
-        web: '#',
-    });*/
+
     const [fromTeam, setFromTeam] = useState({
         stadium: 'stadium',
         web: '#',
-    capacity: 'capacity',})
-    
+        capacity: 'capacity',
+    })
+
     const [fromLeague, setFromLeague] = useState({
-    points: 'current points',
-    played: 'matches played',
-    currentPosition: 'current position',})
-    const [fromStats, setFromStats] = useState({leagueName: 'League name',}) 
+        points: 'current points',
+        played: 'matches played',
+        currentPosition: 'current position',
+    })
+    const [fromStats, setFromStats] = useState({ leagueName: 'League name', })
 
 
 
@@ -34,141 +31,77 @@ function GenerateCards() {
 
 
 
-    useEffect(() => {
-            //function to fetch team
-    function fetchTeam() {
-        const url = `https://football-web-pages1.p.rapidapi.com/team.json?team=${myTeam}`;
+    useEffect(()=>{
+        //function to fetch team
+        function fetchTeam() {
+            const url = `https://football-web-pages1.p.rapidapi.com/team.json?team=${myTeam}`
 
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': myAPIkey,
-                'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': myAPIkey,
+                    'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
+                }
             }
-        };
 
-        fetch(url, options)
-            .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                setFromTeam({
-                    ...fromTeam, stadium: json.team.ground, capacity: json.team.capacity, teamName: json.team.name, web: json.team.website
+            fetch(url, options)
+                .then(res => res.json())
+                .then(json => {
+                    console.log(json)
+                    setFromTeam({
+                        ...fromTeam, stadium: json.team.ground, capacity: json.team.capacity, teamName: json.team.name, web: json.team.website
+                    })
+
                 })
-
-            })
-            .catch(err => console.error('error:' + err));
-    }
-   //function to fetch league atm
-   function fetchLeague() {
-    const url = `https://football-web-pages1.p.rapidapi.com/league-progress.json?team=${myTeam}`;
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': myAPIkey,
-            'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
+                .catch(err => console.error('error:' + err));
         }
-    };
+        //function to fetch league atm
+        function fetchLeague() {
+            const url = `https://football-web-pages1.p.rapidapi.com/league-progress.json?team=${myTeam}`;
 
-    fetch(url, options)
-        .then(res => res.json())
-        .then(json => {
-            console.log(json)
-            const currentPosition = json['league-progress'].progress.length - 1
-            setFromLeague({ ...fromLeague, currentPosition: json['league-progress'].progress[currentPosition].position, points: json['league-progress'].progress[currentPosition].points, played: json['league-progress'].progress[currentPosition].played, })
-        })
-        .catch(err => console.error('error:' + err));
-}
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': myAPIkey,
+                    'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
+                }
+            };
 
-  //function to fetch stats
-  function fetchStats() {
-    const url = `https://football-web-pages1.p.rapidapi.com/league-table.json?comp=1&team=${myTeam}`;
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': myAPIkey,
-            'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
-        }
-    };
-    fetch(url, options)
-        .then(res => res.json())
-        .then(json => {
-            console.log(json)
-            setFromStats({ ...fromStats, leagueName: json['league-table'].competition.name, })
-        })
-        .catch(err => console.error('error:' + err));
-}
-fetchTeam()
-fetchLeague()
-fetchStats()
-
-
-         }, [setFromLeague, setFromStats,setFromTeam, fromStats,fromTeam,fromLeague,myTeam])
-
-   /* //function to fetch team
-    function fetchTeam() {
-        const url = `https://football-web-pages1.p.rapidapi.com/team.json?team=${myTeam}`;
-
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': myAPIkey,
-                'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
-            }
-        };
-
-        fetch(url, options)
-            .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                setState({
-                    ...state, stadium: json.team.ground, capacity: json.team.capacity, teamName: json.team.name, web: json.team.website
+            fetch(url, options)
+                .then(res => res.json())
+                .then(json => {
+                    console.log(json)
+                    const currentPosition = json['league-progress'].progress.length - 1
+                    setFromLeague({ ...fromLeague, currentPosition: json['league-progress'].progress[currentPosition].position, points: json['league-progress'].progress[currentPosition].points, played: json['league-progress'].progress[currentPosition].played, })
                 })
+                .catch(err => console.error('error:' + err));
+        }
 
-            })
-            .catch(err => console.error('error:' + err));
-    }
-    //function to fetch league atm
-    function fetchLeague() {
-        const url = `https://football-web-pages1.p.rapidapi.com/league-progress.json?team=${myTeam}`;
+        //function to fetch stats
+        function fetchStats() {
+            const url = `https://football-web-pages1.p.rapidapi.com/league-table.json?comp=1&team=${myTeam}`;
 
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': myAPIkey,
-                'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
-            }
-        };
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': myAPIkey,
+                    'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
+                }
+            };
+            fetch(url, options)
+                .then(res => res.json())
+                .then(json => {
+                    console.log(json)
+                    setFromStats({ ...fromStats, leagueName: json['league-table'].competition.name, })
+                })
+                .catch(err => console.error('error:' + err));
+        }
+       fetchTeam()
+       fetchLeague()
+       fetchStats()
 
-        fetch(url, options)
-            .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                const currentPosition = json['league-progress'].progress.length - 1
-                setState({ ...state, currentPosition: json['league-progress'].progress[currentPosition].position, points: json['league-progress'].progress[currentPosition].points, played: json['league-progress'].progress[currentPosition].played, })
-            })
-            .catch(err => console.error('error:' + err));
-    }
-    //function to fetch stats
-    function fetchStats() {
-        const url = `https://football-web-pages1.p.rapidapi.com/league-table.json?comp=1&team=${myTeam}`;
 
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': myAPIkey,
-                'X-RapidAPI-Host': 'football-web-pages1.p.rapidapi.com'
-            }
-        };
-        fetch(url, options)
-            .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                setState({ ...state, leagueName: json['league-table'].competition.name, })
-            })
-            .catch(err => console.error('error:' + err));
-    }*/
+},[])
 
 
     return (
