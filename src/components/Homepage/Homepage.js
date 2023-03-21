@@ -1,23 +1,33 @@
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-/*import HomeCards from './HomeCards/HomeCards';
-import Jumbo from './Jumbo/Jumbo';*/
+import GenerateCards from './GenerateCards';
+import GenerateNews from './GenerateNews'
+import './style.css';
 
 
+
+function HomePage() {
+    const teamName = localStorage.getItem('NewsInfo');
  
+    
+    
+    
 
 
-function HomePage(){
-    return (<>
+ return (
+        <section id="homepage">
+            <div id="homepage-wrapper">
+                <Header />
 
-
-<Header />
-<h2>Hello world</h2>
-{/*here comes the content for the home page */}
-
-
-<Footer />
-
-    </>)
+                <h2 className="text-center display-4 mb-5">{teamName}</h2>
+                <GenerateCards/>
+                <h2 className="text-center display-4 m-5">Latest...</h2>
+                <GenerateNews
+                    teamName={teamName} />
+                
+                <Footer />
+               
+            </div>
+        </section>)
 }
 export default HomePage

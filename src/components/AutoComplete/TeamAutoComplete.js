@@ -1,5 +1,6 @@
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import React from 'react'
+import React from 'react';
+
 const teamsJSON = require('../../assets/teams-list.json');
 
 const teamArray = [];
@@ -16,7 +17,9 @@ for (let i = 0; i < teamsJSON.competitions.length; i++) {
 
 console.log(teamArray);
 
-function TeamAutoComplete() {
+function TeamAutoComplete(props) {
+
+
 
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
@@ -29,14 +32,8 @@ function TeamAutoComplete() {
     console.log(result)
   }
 
-  const handleOnSelect = (item) => {
-    // the item selected
-    console.log(item)
-  }
+  const handleOnSelect = props.whichPage
 
-  const handleOnFocus = () => {
-    console.log('Focused')
-  }
 
   const formatResult = (item) => {
     return (
@@ -47,21 +44,18 @@ function TeamAutoComplete() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+ 
         <div style={{ width: 400 }}>
           <ReactSearchAutocomplete
             items={teamArray}
             onSearch={handleOnSearch}
             onHover={handleOnHover}
             onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
             autoFocus
             formatResult={formatResult}
           />
         </div>
-      </header>
-    </div>
+
   )
 }
 
