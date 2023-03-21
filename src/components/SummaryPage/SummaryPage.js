@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import SummaryCard from "../SummaryCard/SummaryCard";
 import SummaryCell from "../SummaryCell/SummaryCell";
 import FixturesCell from "../FixturesCell/FixturesCell"
+import Header from "../Header/Header"
 import './SummaryPage.css'
 import background from '../../images/travis-jones-bJp_wwRmF1I-unsplash.jpg'
 
@@ -93,7 +94,7 @@ function SummaryPage() {
     //     } else {
     //         return (
     //             <FixturesCell
-                
+
     //             />
     //         )
     //     }
@@ -101,57 +102,60 @@ function SummaryPage() {
 
 
     return (
-        <div className="background w-100 h-100"
-            style={{ backgroundImage: `url${background}` }}>
-            <div className="text-center py-4" id="summary-header">
-                <h1 id="summary-title">Summary</h1>
-                <p id="summary-subtitle">Get up-to-date with league tables and view upcoming fixtures</p>
-            </div>
-            <SideNav>
-                {leagues.map((league, index) => {
+        <>
+
+            <div className="background w-100 h-100"
+                style={{ backgroundImage: `url${background}` }}>
+                <div className="text-center py-4" id="summary-header">
+                    <h1 id="summary-title">Summary</h1>
+                    <p id="summary-subtitle">Get up-to-date with league tables and view upcoming fixtures</p>
+                </div>
+                <SideNav>
+                    {leagues.map((league, index) => {
 
 
-                    return (
-                        <SideNavLink
-                            name={league['full-name']}
-                            index={index}
-                            idnum={league.id}
-                            click={(event) => {
-                                event.preventDefault();
-                                setCurrentLeague(league);
-                                console.log(currentLeague)
-                                fetchStats()
-                            }
-                            }
-                        />
-                    )
-                })}
-            </SideNav>
+                        return (
+                            <SideNavLink
+                                name={league['full-name']}
+                                index={index}
+                                idnum={league.id}
+                                click={(event) => {
+                                    event.preventDefault();
+                                    setCurrentLeague(league);
+                                    console.log(currentLeague)
+                                    fetchStats()
+                                }
+                                }
+                            />
+                        )
+                    })}
+                </SideNav>
 
-            <SummaryCard
-                league={currentLeague['full-name']}
+                <SummaryCard
+                    league={currentLeague['full-name']}
                 >
-  
-                {currentTeams.map((team) => {
-                    return (
-                        <SummaryCell
-                            club={team.name}
-                            clubid={team.id}
-                            leagueid={currentLeague.id}
-                            position={team.position}
-                            played={team['all-matches'].played}
-                            won={team['all-matches'].won}
-                            drawn={team['all-matches'].drawn}
-                            lost={team['all-matches'].lost}
-                            goalDifference={team['all-matches']['goal-difference']}
-                            points={team['total-points']}
-                        />
-                    )
-                })
-            }
 
-            </SummaryCard>
-        </div>
+                    {currentTeams.map((team) => {
+                        return (
+                            <SummaryCell
+                                club={team.name}
+                                clubid={team.id}
+                                leagueid={currentLeague.id}
+                                position={team.position}
+                                played={team['all-matches'].played}
+                                won={team['all-matches'].won}
+                                drawn={team['all-matches'].drawn}
+                                lost={team['all-matches'].lost}
+                                goalDifference={team['all-matches']['goal-difference']}
+                                points={team['total-points']}
+                            />
+                        )
+                    })
+                    }
+
+                </SummaryCard>
+            </div>
+        </>
     )
 }
 export default SummaryPage
