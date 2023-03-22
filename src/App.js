@@ -1,7 +1,6 @@
 import HomePage from './components/Homepage/Homepage';
 import Welcome from './components/Welcome/Welcome';
-import Header from './components/Header/Header'
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes} from 'react-router-dom';
 import SavedTeamPage from './components/SavedTeamsPage/SavedTeamsPage';
 import SummaryPage from './components/SummaryPage/SummaryPage';
 

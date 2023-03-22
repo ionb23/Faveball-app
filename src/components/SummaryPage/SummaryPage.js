@@ -3,10 +3,10 @@ import SideNavLink from "../SideNavLink/SideNavLink";
 import { useState, useEffect } from "react"
 import SummaryCard from "../SummaryCard/SummaryCard";
 import SummaryCell from "../SummaryCell/SummaryCell";
-import FixturesCell from "../FixturesCell/FixturesCell"
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header"
 import './SummaryPage.css'
-import background from '../../images/travis-jones-bJp_wwRmF1I-unsplash.jpg'
+
 
 
 function SummaryPage() {
@@ -75,8 +75,7 @@ function SummaryPage() {
     return (
         <>
             <Header />
-            <div className="background w-100 h-100"
-                style={{ backgroundImage: `url${background}` }}>
+            <div className="background w-100 h-100">
                 <div className="text-center py-4" id="summary-header">
                     <h1 id="summary-title">Live</h1>
                     <p id="summary-subtitle">Get up-to-date with league tables and view upcoming fixtures</p>
@@ -125,6 +124,7 @@ function SummaryPage() {
                     }
 
                 </SummaryCard>
+                <Footer />
             </div>
         </>
     )
