@@ -71,35 +71,6 @@ function SummaryPage() {
             .catch(err => console.error(err));
     }
 
-    // const generateCells = () => {
-    //     if (tableState === false) {
-    //         {
-    //             currentTeams.map((team) => {
-    //                 return (
-    //                     <SummaryCell
-    //                         club={team.name}
-    //                         clubid={team.id}
-    //                         leagueid={currentLeague.id}
-    //                         position={team.position}
-    //                         played={team['all-matches'].played}
-    //                         won={team['all-matches'].won}
-    //                         drawn={team['all-matches'].drawn}
-    //                         lost={team['all-matches'].lost}
-    //                         goalDifference={team['all-matches']['goal-difference']}
-    //                         points={team['total-points']}
-    //                     />
-    //                 )
-    //             })
-    //         }
-    //     } else {
-    //         return (
-    //             <FixturesCell
-
-    //             />
-    //         )
-    //     }
-    // }
-
 
     return (
         <>

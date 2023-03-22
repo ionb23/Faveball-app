@@ -1,8 +1,8 @@
 .summary-card {
     width: 70vw;
     margin: 0 !important;
-    position: absolute;
-    right: 4%;
+    position: absolute !important;
+    right: 4%; 
     top: 35%;
 }
 
