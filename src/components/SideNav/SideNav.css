@@ -2,9 +2,7 @@
 
 
 #sidenav-summary {
-    height: 150vh !important;
-    overflow-x: scroll !important;
-    width: 20vw !important;
+ width: 20vw !important;
     padding: 15px 0;
     position: relative;
     margin-right: 0  !important;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFutbol } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faFutbol } from '@fortawesome/free-solid-svg-icons'
 import './SummaryCell.css'
-import { icon } from '@fortawesome/fontawesome-svg-core'
+
 
 
 
@@ -46,7 +46,7 @@ function SummaryCell(props) {
 
             console.log(savedTeams)
             setSavedTeams(pulledTeams)
-            localStorage.setItem('saved-teams', JSON.stringify(pulledTeams));
+            // localStorage.setItem('saved-teams', JSON.stringify(pulledTeams));
 
         } else {
 
@@ -60,13 +60,10 @@ function SummaryCell(props) {
             pulledTeams.pop(clubFav)
             setSavedTeams(pulledTeams)
 
-            localStorage.setItem('saved-teams', pulledTeams)
+            // localStorage.setItem('saved-teams', pulledTeams)
 
 
         }
-
-
-
     }
 
     console.log(status)
@@ -80,7 +77,9 @@ function SummaryCell(props) {
 
                 <tr data-club={club} className="league-table-fav" data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
                     <th scope="row">{position}</th>
-                    <td className='px-4 text-left'><FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' />{club} </td>
+                    <td className='px-4 text-left'>{club}
+                        {/* <FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' /> */}
+                    </td>
                     <td >{played}</td>
                     <td >{won}</td>
                     <td>{drawn}</td>
@@ -95,7 +94,9 @@ function SummaryCell(props) {
 
                 <tr data-club={club} className="league-table" data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
                     <th scope="row">{position}</th>
-                    <td className='px-4 text-left'><FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' />{club} </td>
+                    <td className='px-4 text-left'>{club}
+                        {/* <FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' /> */}
+                    </td>
                     <td >{played}</td>
                     <td >{won}</td>
                     <td>{drawn}</td>
