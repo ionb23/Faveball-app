@@ -24,7 +24,7 @@ function SummaryPage() {
     const [leagues, setLeagues] = useState([]);
     const [currentLeague, setCurrentLeague] = useState([leagues[0]])
     const [currentTeams, setCurrentTeams] = useState([])
-    const [tableState, setTableState] = useState(false)
+    
 
 
 
@@ -74,11 +74,11 @@ function SummaryPage() {
 
     return (
         <>
-
+            <Header />
             <div className="background w-100 h-100"
                 style={{ backgroundImage: `url${background}` }}>
                 <div className="text-center py-4" id="summary-header">
-                    <h1 id="summary-title">Summary</h1>
+                    <h1 id="summary-title">Live</h1>
                     <p id="summary-subtitle">Get up-to-date with league tables and view upcoming fixtures</p>
                 </div>
                 <SideNav>

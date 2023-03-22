@@ -5,10 +5,12 @@ import './SideNav.css';
 
 function SideNav(props) {
     return (
-        <div className='flex-column justify-content-center' id="sidenav-summary">
-            <ul className="nav flex-column h-100 justify-content-center align-items-start" id="sidenav-summary-links">
-                {props.children}
-            </ul>
+        <div id="sidenav-summary-div">
+            <div className='flex-column justify-content-center' id="sidenav-summary">
+                <ul className="nav flex-column h-100 justify-content-center align-items-start" id="sidenav-summary-links">
+                    {props.children}
+                </ul>
+            </div>
         </div>
     )
 }

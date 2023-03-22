@@ -1,13 +1,17 @@
+
+
+
 #sidenav-summary {
-    height: 100%;
-    width: 20vw;
+    height: 150vh !important;
+    overflow-x: scroll !important;
+    width: 20vw !important;
     padding: 15px 0;
     position: relative;
     margin-right: 0  !important;
 }
 
 #sidenav-summary-links {
-    width: 20vw;
+    width: 20vw !important;
   
 }
 

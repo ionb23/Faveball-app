@@ -2,6 +2,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import GenerateCards from './GenerateCards';
 import GenerateNews from './GenerateNews'
+import {Navigate} from 'react-router-dom'
 import './style.css';
 
 
@@ -16,6 +17,7 @@ function HomePage() {
 
  return (
         <section id="homepage">
+             {localStorage.getItem('Fav team') ? <Navigate to="/home" replace /> : <Navigate to="/" replace />}
             <div id="homepage-wrapper">
                 <Header />
 

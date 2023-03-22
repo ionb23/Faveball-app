@@ -13,7 +13,9 @@ function SummaryCell(props) {
 
     const pulledTeams = [localStorage.getItem('saved-teams')]
 
-    
+    const favTeam = localStorage.getItem('NewsInfo')
+    console.log(favTeam)
+
 
     // setStatus for changing fav icon color 
     const [status, setStatus] = useState(false);
@@ -31,7 +33,7 @@ function SummaryCell(props) {
         const clubid = currentRow.dataset.clubid;
         const leagueid = currentRow.dataset.leagueid;
         if (status === false) {
-            
+
 
             setStatus(true);
             setClubFav({
@@ -41,7 +43,7 @@ function SummaryCell(props) {
             });
             pulledTeams.push(clubFav)
 
-            
+
             console.log(savedTeams)
             setSavedTeams(pulledTeams)
             localStorage.setItem('saved-teams', JSON.stringify(pulledTeams));
@@ -71,19 +73,41 @@ function SummaryCell(props) {
     console.log(clubFav);
 
 
+    {
+        if (club === favTeam) {
+            return (
 
-    return (
-        <tr data-club={club} data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
-            <th scope="row">{position}</th>
-            <td className='px-4 text-center'><FontAwesomeIcon className={status ? "mx-4 text-start icon-active" : "mx-4 text-start icon-inactive"} icon={faFutbol} id='football-icon' />{club} </td>
-            <td >{played}</td>
-            <td >{won}</td>
-            <td>{drawn}</td>
-            <td>{lost}</td>
-            <td>{goalDifference}</td>
-            <td>{points}</td>
-        </tr>
-    )
+
+                <tr data-club={club} className="league-table-fav" data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
+                    <th scope="row">{position}</th>
+                    <td className='px-4 text-left'><FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' />{club} </td>
+                    <td >{played}</td>
+                    <td >{won}</td>
+                    <td>{drawn}</td>
+                    <td>{lost}</td>
+                    <td>{goalDifference}</td>
+                    <td>{points}</td>
+                </tr>
+            )
+        } else {
+            return (
+
+
+                <tr data-club={club} className="league-table" data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
+                    <th scope="row">{position}</th>
+                    <td className='px-4 text-left'><FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' />{club} </td>
+                    <td >{played}</td>
+                    <td >{won}</td>
+                    <td>{drawn}</td>
+                    <td>{lost}</td>
+                    <td>{goalDifference}</td>
+                    <td>{points}</td>
+                </tr>
+            )
+        }
+    }
+
+
 }
 
 export default SummaryCell

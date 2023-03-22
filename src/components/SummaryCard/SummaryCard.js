@@ -19,15 +19,15 @@ function SummaryCard(props) {
             <div className="card summary-card" data-state>
                 <ul onClick={handleTabClick} className="nav nav-pills nav-fill">
                     <li className="nav-item">
-                        <a className={tabState ? 'nav-link active' : 'nav-link'} aria-current="page">Table</a>
+                        <a className='nav-link summary-card-title' aria-current="page">{league} Table</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className={tabState ? 'nav-link' : 'nav-link active'}>Fixtures</a>
-                    </li>
+                    </li> */}
                 </ul>
-                <h3 id='league-title'>{league}</h3>
+    
                 <div className='card-body'>
-                    <table className={tabState ? 'd-none' : 'table table-hover'}>
+                    <table className= 'table table-hover'>
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -44,7 +44,7 @@ function SummaryCard(props) {
                             {children}
                         </tbody>
                     </table>
-                    <table className={tabState ? 'table table-hover' : 'd-none'}>
+                    {/* <table className={tabState ? 'table table-hover' : 'd-none'}>
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
@@ -55,7 +55,7 @@ function SummaryCard(props) {
                         <tbody>
                             {children}
                         </tbody>
-                    </table>
+                    </table> */}
                 </div>
             </div>
         </div>

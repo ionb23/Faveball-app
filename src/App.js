@@ -11,11 +11,10 @@ function App() {
     <Router>
 
       <Routes>
-        <Route path="/welcome" element={<Welcome />} />
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/live" element={<SummaryPage />} />
-        <Route path="/saved/*" element={<SavedTeamPage />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/saved" element={<SavedTeamPage />} />
       </Routes>
     </Router>
   );

@@ -4,11 +4,22 @@
     position: absolute !important;
     right: 4%; 
     top: 35%;
+    padding: 0 2%
+}
+
+.summary-card-title {
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    font-size: 200% !important;
+    padding: 60px !important;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1.2rem !important;
 }
 
 .summary-card h3 {
     text-align: center;
     padding: 20px;
+
 }
 
 .nav-pills .nav-link.active {
