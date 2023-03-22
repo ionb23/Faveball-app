@@ -1,78 +1,89 @@
-import AutoComplete from "../AutoComplete/TeamAutoComplete.js";
+import TeamAutoComplete from "../AutoComplete/TeamAutoComplete.js";
 import React from "react";
+import '../SavedTeamsPage/SavedTeamsStyle.css'
 
 function SavedTeamsCard(props) {
+
+  const saveMySecondTeam = (item) => {
+    localStorage.setItem('secondTeam', item.name);
+    window.location.reload(false);
+  }
+
   return (
     <>
-      <div className="card-group me-5 ms-5">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{props.teamName}</h5>
-            <p className="card-text">Home ground: {props.groundName}</p>
-            <p className="card-text">Capacity: {props.groundCapacity} people</p>
-            <p className="card-text">League: {props.leagueName}</p>
-            <p className="card-text">League position: {props.leaguePosition}</p>
-            <p className="card-text">Games played: {props.leaguePlayed}</p>
-            <p className="card-text">Current points: {props.leaguePoints}</p>
+      <div className="row d-flex align-items-center justify-content-around me-5 ms-5">
+        <div className="card homepagecard col-sm-6 col-md-4 col-lg-3">
+          <div className="card-body d-flex flex-column align-items-center justify-content-center">
+            <h5 className="card-title card-title-info">{props.teamName}</h5>
+            <p className="card-text lihp text-center">Home ground: <p className="information">{props.groundName}</p></p>
+            <p className="card-text lihp text-center">Capacity: <p className="information">{props.groundCapacity}</p> people</p>
+            <p className="card-text lihp text-center">League: <p className="information">{props.leagueName}</p></p>
+            <p className="card-text lihp text-center">League position: <p className="information">{props.leaguePosition}</p></p>
+            <p className="card-text lihp text-center">Games played: <p className="information">{props.leaguePlayed}</p></p>
+            <p className="card-text lihp text-center">Current points: <p className="information">{props.leaguePoints}</p></p>
           </div>
         </div>
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Records</h5>
-            <p className="card-text">{props.WINdescription}:</p>
-            <p className="card-text">
-              {props.WINhomeTeamName} ({props.WINhomeTeamscore}) - ({props.WINawayTeamScore}) {props.WINawayTeamName}
+        <div className="card homepagecard col-sm-6 col-md-4 col-lg-3">
+          <div className="card-body d-flex flex-column align-items-center justify-content-around">
+            <h3 className="card-title card-title-info">Records</h3>
+            <p className="card-text lihp text-center">{props.WINdescription}:</p>
+            <p className="card-text information">
+              {props.WINhomeTeamName} <strong>{props.WINhomeTeamscore} - {props.WINawayTeamScore}</strong> {props.WINawayTeamName}
             </p>
-            <p className="card-text">
+            <p className="card-text information2 text-center">
               Date: {props.WINdate}. Attendance: {props.WINattendance}
             </p>
-            <p className="card-text">{props.LOSSdescription}:</p>
-            <p className="card-text">
-              {props.LOSShomeTeamName} ({props.LOSShomeTeamscore}) - ({props.LOSSawayTeamScore}) {props.LOSSawayTeamName}
+            <p className="card-text lihp text-center">{props.LOSSdescription}:</p>
+            <p className="card-text information">
+              {props.LOSShomeTeamName} <strong>{props.LOSShomeTeamscore} - {props.LOSSawayTeamScore}</strong> {props.LOSSawayTeamName}
             </p>
-            <p className="card-text">
+            <p className="card-text information2 text-center">
               Date: {props.LOSSdate}. Game attendance: {props.LOSSattendance}
             </p>
-            <p className="card-text">{props.SCOREdescription}:</p>
-            <p className="card-text">
-              {props.SCOREhomeTeamName} ({props.SCOREhomeTeamscore}) - ({props.SCOREawayTeamScore}) {props.SCOREawayTeamName}
+            <p className="card-text lihp text-center">{props.SCOREdescription}:</p>
+            <p className="card-text information">
+              {props.SCOREhomeTeamName} <strong>{props.SCOREhomeTeamscore} - {props.SCOREawayTeamScore}</strong> {props.SCOREawayTeamName}
             </p>
-            <p className="card-text">
+            <p className="card-text information2 text-center">
               Date: {props.SCOREdate}. Game attendance: {props.SCOREattendance}
             </p>
-            <p className="card-text">{props.HIGHdescription}:</p>
-            <p className="card-text">
-              {props.HIGHhomeTeamName} ({props.HIGHhomeTeamscore}) - ({props.HIGHawayTeamScore}) {props.HIGHawayTeamName}
+            <p className="card-text lihp text-center">{props.HIGHdescription}:</p>
+            <p className="card-text information">
+              {props.HIGHhomeTeamName} <strong>{props.HIGHhomeTeamscore} - {props.HIGHawayTeamScore}</strong> {props.HIGHawayTeamName}
             </p>
-            <p className="card-text">
+            <p className="card-text information2 text-center">
               Date: {props.HIGHdate}. Game attendance: {props.HIGHattendance}
             </p>
-            <p className="card-text">{props.LOWdescription}:</p>
-            <p className="card-text">
-              {props.LOWhomeTeamName} ({props.LOWhomeTeamscore}) - ({props.LOWawayTeamScore}) {props.LOWawayTeamName} 
+            <p className="card-text lihp text-center">{props.LOWdescription}:</p>
+            <p className="card-text information">
+              {props.LOWhomeTeamName} <strong>{props.LOWhomeTeamscore} - {props.LOWawayTeamScore}</strong> {props.LOWawayTeamName}
             </p>
-            <p className="card-text">
+            <p className="card-text information2 text-center">
               Date: {props.LOWdate}. Game attendance: {props.LOWattendance}
             </p>
           </div>
         </div>
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
+        <div className="card homepagecard col-sm-6 col-md-4 col-lg-3 d-flex flex-column align-items-center justify-content-center">
           <div className="card-body">
-            <h5 className="card-title">Top Goalscorer</h5>
-            <p className="card-text">
+            <h5 className="card-title card-title-info">Top Goalscorer</h5>
+          </div>
+          <img src={props.playerImg} className="card-img-top playerImg" alt="Top Goalscorer of this football team" />
+          <div className="card-body">
+            <p className="card-text card-title-info">
               {props.firstName} {props.lastName}
             </p>
-            <p className="card-text">Goals scored: {props.goals}</p>
+            <p className="card-text lihp text-center">Goals scored: <span className="information">{props.goals}</span></p>
           </div>
         </div>
       </div>
       {/* remove bottom border rounding from team card and remove top border rounding from the comparison div below*/}
-      <div className="card card-footer me-5 ms-5 d-flex flex-row">
-        <small className="text-muted">
-          Choose a team to compare your favourite team against:
-        </small>
-        <AutoComplete />
+      <div className="card card-footer me-5 ms-5 d-flex flex-row align-items-center justify-content-center">
+      <div className="card-body d-flex flex-row">
+      <small className="card-text comparison align-self-center">
+            Choose a team to compare your favourite team against:
+          </small>
+          <TeamAutoComplete whichPage={saveMySecondTeam} />
+        </div>
       </div>
 
       {/* <div className="card">
