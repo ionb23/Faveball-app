@@ -11,8 +11,6 @@ import './SummaryPage.css'
 
 function SummaryPage() {
 
-    const image = require('https://images.unsplash.com/photo-1522947961977-67fe74257c16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
-
     useEffect(() => {
         fetchLeagues()
     }, [])
@@ -66,7 +64,6 @@ function SummaryPage() {
             .then((response) => {
                 console.log(response);
                 setCurrentTeams(response['league-table'].teams);
-                console.log(currentTeams)
             })
             .catch(err => console.error(err));
     }

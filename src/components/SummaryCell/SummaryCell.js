@@ -14,7 +14,6 @@ function SummaryCell(props) {
     const pulledTeams = [localStorage.getItem('saved-teams')]
 
     const favTeam = localStorage.getItem('NewsInfo')
-    console.log(favTeam)
 
 
     // setStatus for changing fav icon color 
@@ -66,8 +65,6 @@ function SummaryCell(props) {
         }
     }
 
-    console.log(status)
-    console.log(clubFav);
 
 
     {
@@ -75,13 +72,13 @@ function SummaryCell(props) {
             return (
 
 
-                <tr data-club={club} className="league-table-fav" data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
-                    <th scope="row">{position}</th>
-                    <td className='px-4 text-left'>{club}
+                <tr data-club={club} className="league-table-fav" data-clubid={clubid} data-leagueid={leagueid} key={club} onClick={iconClick} >
+                    <th key="position" scope="row">{position}</th>
+                    <td className='px-4 text-center'>{club}
                         {/* <FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' /> */}
                     </td>
-                    <td >{played}</td>
-                    <td >{won}</td>
+                    <td key="played">{played}</td>
+                    <td key="won">{won}</td>
                     <td>{drawn}</td>
                     <td>{lost}</td>
                     <td>{goalDifference}</td>
@@ -92,9 +89,9 @@ function SummaryCell(props) {
             return (
 
 
-                <tr data-club={club} className="league-table" data-clubid={clubid} data-leagueid={leagueid} onClick={iconClick} >
+                <tr data-club={club} className="league-table" data-clubid={clubid} data-leagueid={leagueid} key={club} onClick={iconClick} >
                     <th scope="row">{position}</th>
-                    <td className='px-4 text-left'>{club}
+                    <td className='px-4 text-center'>{club}
                         {/* <FontAwesomeIcon className={status ? "mx-4 text-start icon icon-active text-start" : "mx-4 text-start icon icon-inactive"} icon={faFutbol} id='football-icon' /> */}
                     </td>
                     <td >{played}</td>
